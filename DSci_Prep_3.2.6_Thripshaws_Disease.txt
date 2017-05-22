@@ -1,0 +1,57 @@
+"""A diagnostic test has a 98% probability of giving a positive result when applied to a person suffering from Thripshaw's Disease, 
+and 10% probability of giving a (false) positive when applied to a non-sufferer. 
+It is estimated that 0.5 % of the population are sufferers. 
+Suppose that the test is now administered to a person whose disease status is unknown.""" 
+
+#Calculate the probability that the test will:
+#1 Be positive
+#2 Correctly diagnose a sufferer of Thripshaw's
+#3 Correctly identify a non-sufferer of Thripshaw's
+#4 Misclassify the person
+
+
+P(Th) = 0.005
+
+P(Test +'ve| Th) = 0.98
+P(Test +'ve|~Th) = 0.1
+
+Consider a population of 1000,000 (or 10**6)
+
+Thripshaw     Sufferers     =   0.005   * 10**6     =   5000
+Non-Thripshaw Sufferers     =   0.005   * 10**6     =   995000
+
+Of the 5000 who are sufferers:
+"True Positives"            =   0.98    *   5000    =   4900
+"False Negatives"           =   0.02    *   5000    =   100
+
+Of the 995000 who are not sufferers:
+"False Positives"           =   0.1     *   995000  =   99500
+"True Negatives"            =   0.9     *   995000  =   895500
+
+
+Q #1) Be positive
+P(Test +'ve)                =   ("True Positives" + "False Positives") / 10**6
+                            =   (4900 + 99500) / 10**6
+                            =   10.44%                  (or 10 in 100 people.)
+
+Q #2) Correctly diagnose a sufferer of Thripshaw's
+P(Th| Test +'ve)            =   "True Positives"    /   ("True Positives" + "False Positives")
+                            =   4900/(4900 + 99500)
+                            =   0.0469  
+                            =   4.69 %                  (or 47 in 1000 people.)
+
+Q #3) Correctly identify a non-sufferer of Thripshaw's
+P(Th| Test +'ve)            =   "True Negatives"    /   ("True Negatives" + "False Negatives")
+                            =   895500/(895500 + 100)
+                            =   0.99988  
+                            =   99.98 %                 (or wrong 1 in 10,000)
+
+Q #4) Misclassify the person ... implies summing both the False Positives and the False Negatives....
+                            =   "False Positives"  + "False Negatives" / 10**6
+                            =   (99500 + 100) / (10**6)
+                            =   0.0996                  (or wrong for approx 1 on 10 people)
+
+
+
+
+
