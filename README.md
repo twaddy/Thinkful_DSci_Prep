@@ -1,2 +1,2 @@
 # Thinkful_DSci_Prep
-Thinkful.com 's Data Science Prep Course's assignments
+Tim Waddy's assignments for Thinkful.com 's Data Science Prep Course.
